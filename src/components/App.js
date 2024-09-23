@@ -70,19 +70,21 @@ export default function App() {
       {!loading && !error && (
         <>
         <div>
+          
+          <label htmlFor="sortOrder">Order:</label>
+          <select id="sortOrder" onChange={handleSortOrderChange}>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+          <div>
           <label htmlFor="sortCriterion">Sort by:</label>
           <select id="sortCriterion" onChange={handleSortCriterionChange}>
             <option value="title">Title</option>
             <option value="author">Author</option>
             <option value="publisher">Publisher</option>
           </select>
-        </div>
-          <div>
-          <label htmlFor="sortOrder">Order:</label>
-          <select id="sortOrder" onChange={handleSortOrderChange}>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-          </select>
+
           </div>
           </>
       )}
@@ -95,7 +97,7 @@ export default function App() {
         <th>Title</th>
         <th>Author</th>
         <th>Publisher</th>
-        <th>Description</th>
+        <th>ISBN</th>
       </tr>
     </thead>
     <tbody>
