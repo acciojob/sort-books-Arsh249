@@ -80,6 +80,7 @@ export default function App() {
           <div>
           <label htmlFor="sortCriterion">Sort by:</label>
           <select id="sortCriterion" onChange={handleSortCriterionChange}>
+            <option>select</option>
             <option value="title">Title</option>
             <option value="author">Author</option>
             <option value="publisher">Publisher</option>
