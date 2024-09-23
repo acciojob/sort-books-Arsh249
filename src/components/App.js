@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import 'regenerator-runtime/runtime';
 import './../styles/App.css';
 
 export default function App() {
