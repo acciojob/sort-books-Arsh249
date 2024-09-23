@@ -13,7 +13,7 @@ export default function App() {
     const fetchBooks = async () => {
       try {
         const response = await fetch(
-          `https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction&api-key=YOUR_API_KEY`
+          `https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction&api-key=aE9sYXA2Cq9bU326XOOt5RoPIymGV4lb`
         );
         const data = await response.json();
         const fetchedBooks = data.results.map((book) => ({
