@@ -68,7 +68,7 @@ export default function App() {
       {/* Sorting Controls */}
       {!loading && !error && (
         <div>
-          <label htmlFor="sortCriterion">Sort By:</label>
+          <label htmlFor="sortCriterion">Sort by:</label>
           <select id="sortCriterion" onChange={handleSortCriterionChange}>
             <option value="title">Title</option>
             <option value="author">Author</option>
@@ -84,14 +84,26 @@ export default function App() {
       )}
 
       {/* Display list of books */}
-      <ul>
-        {books.map((book, index) => (
-          <li key={index}>
-            <strong>{book.title}</strong> by {book.author} (Published by:{" "}
-            {book.publisher})
-          </li>
-        ))}
-      </ul>
+      {books.length > 0 && (
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      {books.map((book, index) => (
+        <tr key={index}>
+          <td>{book.title}</td>
+          <td>{book.author}</td>
+          <td>{book.publisher}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
     </div>
   );
 }
