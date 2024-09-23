@@ -21,6 +21,7 @@ export default function App() {
           title: book.book_details[0].title,
           author: book.book_details[0].author,
           publisher: book.book_details[0].publisher,
+          description: book.book_details[0].description
         }));
         setBooks(fetchedBooks);
         setLoading(false);
@@ -67,6 +68,7 @@ export default function App() {
 
       {/* Sorting Controls */}
       {!loading && !error && (
+        <>
         <div>
           <label htmlFor="sortCriterion">Sort by:</label>
           <select id="sortCriterion" onChange={handleSortCriterionChange}>
@@ -74,13 +76,15 @@ export default function App() {
             <option value="author">Author</option>
             <option value="publisher">Publisher</option>
           </select>
-
+        </div>
+          <div>
           <label htmlFor="sortOrder">Order:</label>
           <select id="sortOrder" onChange={handleSortOrderChange}>
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-        </div>
+          </div>
+          </>
       )}
 
       {/* Display list of books */}
@@ -91,6 +95,7 @@ export default function App() {
         <th>Title</th>
         <th>Author</th>
         <th>Publisher</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
@@ -99,6 +104,7 @@ export default function App() {
           <td>{book.title}</td>
           <td>{book.author}</td>
           <td>{book.publisher}</td>
+          <td>{book.description}</td>
         </tr>
       ))}
     </tbody>
